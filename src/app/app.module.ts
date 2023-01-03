@@ -10,7 +10,7 @@ import { SuccessAlertComponent } from './components/success-alert/success-alert.
   declarations: [
     AppComponent,
     WarningAlertComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
   ],
   imports: [
     BrowserModule,
