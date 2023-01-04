@@ -1,8 +1,17 @@
-
 <div class="success"><p>success-alert!</p></div>
 
-<p> Server with ID {{ serverId }} is {{ getServerStatus() }} </p>
+<p>Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
 
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()"> Add Server </button>
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<p>{{ serverName }}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (focus)="onCreateServer()"
+>
+  Add Server
+</button>
 <!-- <p [innerText]="allowNewServer"></p> -->
 <p>{{ serverCreationStatus }}</p>
