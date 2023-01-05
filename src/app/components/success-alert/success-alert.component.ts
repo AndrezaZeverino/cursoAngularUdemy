@@ -7,21 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessAlertComponent implements OnInit {
   serverId: number = 10;
-  serverStatus: string = 'online'
+  serverStatus: string = 'offline'
 
   allowNewServer = false;
   serverCreationStatus = 'No server was created'
   serverName = '';
   serverCreated = false;
 
-  getServerStatus() {
-    return this.serverStatus;
-  }
   constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
    }
+
+  getServerStatus() {
+    return this.serverStatus;
+  }
+
+  getColor() {
+    return this.serverStatus === 'online'? 'green' :'red';
+  }
 
   ngOnInit(): void {
   }
